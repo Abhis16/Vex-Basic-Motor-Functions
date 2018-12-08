@@ -5,19 +5,19 @@
 
 // drive functions
 void moveForward(int power, long revolutions) {
-		resetMotorEncoder(port1);
-		resetMotorEncoder(port3);
-		int distance = revolutions * 627;  // converting revolutions to number of ticks
-		while(getMotorEncoder(port1) < distance && getMotorEncoder(port3) < distance) {
-			motor[port1] = power;
-			motor[port2] = power;
-			motor[port3] = power;
-			motor[port4] = power;
-		}
-	  motor[port1] = 0;
-		motor[port2] = 0;
-		motor[port3] = 0;
-		motor[port4] = 0;
+	resetMotorEncoder(port1);
+	resetMotorEncoder(port3);
+	int distance = revolutions * 627;  // converting revolutions to number of ticks
+	while(getMotorEncoder(port1) < distance && getMotorEncoder(port3) < distance) {
+		motor[port1] = power;
+		motor[port2] = power;
+		motor[port3] = power;
+		motor[port4] = power;
+	}
+	motor[port1] = 0;
+	motor[port2] = 0;
+	motor[port3] = 0;
+	motor[port4] = 0;
 
 }
 
@@ -29,37 +29,37 @@ void turnRight(int power, long revolutions) {
    		motor[port2] = power;
  	 }
 
- 	 motor[port1]  = 0;
-   motor[port2] = 0;
+   	motor[port1]  = 0;
+   	motor[port2] = 0;
 }
 
 void turnLeft(int power, long revolutions) {
 	resetMotorEncoder(port3);
 	int distance = revolutions * 627;  // converting revolutions to number of ticks
-	 while(getMotorEncoder(port3) < distance){
+	while(getMotorEncoder(port3) < distance){
    		motor[port3] = power;
    		motor[port4] = power;
- 	 }
- 	 motor[port3]  = 0;
-   motor[port4] = 0;
+ 	}
+ 	motor[port3]  = 0;
+   	motor[port4] = 0;
 }
 
 void moveBackward(int power, long revolutions) {
-		power = power * (0-1);
-		resetMotorEncoder(port1);
-		resetMotorEncoder(port3);
-		int distance = revolutions * 627;  // converting revolutions to number of ticks
+	power = power * (0-1);
+	resetMotorEncoder(port1);
+	resetMotorEncoder(port3);
+	int distance = revolutions * 627;  // converting revolutions to number of ticks
 
-		while(getMotorEncoder(port1) < distance && getMotorEncoder(port3) < distance) {
-			motor[port1] = power;
-			motor[port2] = power;
-			motor[port3] = power;
-			motor[port4] = power;
-		}
-	  motor[port1] = 0;
-		motor[port2] = 0;
-		motor[port3] = 0;
-		motor[port4] = 0;
+	while(getMotorEncoder(port1) < distance && getMotorEncoder(port3) < distance) {
+		motor[port1] = power;
+		motor[port2] = power;
+		motor[port3] = power;
+		motor[port4] = power;
+	}
+	motor[port1] = 0;
+	motor[port2] = 0;
+	motor[port3] = 0;
+	motor[port4] = 0;
 
 }
 // main power value most commonly used
